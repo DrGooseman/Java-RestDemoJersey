@@ -27,3 +27,4 @@ yarn-error.log*
 firebase.json
 
 /src/main/java/com/bbs/demorest/ENV.java
+/target/classes/com/bbs/demorest/ENV.class
