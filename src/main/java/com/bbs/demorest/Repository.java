@@ -82,5 +82,39 @@ public class Repository {
 		}
 		
 	}
+	
+	public void updateCustomer(Customer cust){
+		String sql = "update customer set name=?, email=? where id=?";
+		try {
+			PreparedStatement st= con.prepareStatement(sql);
+			
+			
+			st.setString(1, cust.getName());
+			st.setString(2, cust.getEmail());
+			st.setInt(3, cust.getId());
+			st.executeUpdate();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public void deleteCustomer(int id){
+		String sql = "delete from customer where id=?";
+		try {
+			PreparedStatement st= con.prepareStatement(sql);
+			
+			
+			st.setInt(1, id);
+			st.executeUpdate();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 
 }
